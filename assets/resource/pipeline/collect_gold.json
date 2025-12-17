@@ -3,9 +3,9 @@
         "$__mpe_code": {
             "prefix": "",
             "savedViewport": {
-                "x": -471.1666259765625,
-                "y": -71.41665649414062,
-                "zoom": 1.5
+                "x": -423.41469332901625,
+                "y": 227.11497467320174,
+                "zoom": 1.1908568493649683
             },
             "filename": "collect_gold",
             "version": "v0.11.1"
@@ -24,19 +24,33 @@
                     122,
                     918,
                     580
+                ],
+                "threshold": [
+                    0.7
                 ]
             }
         },
         "action": {
             "type": "LongPress",
             "param": {
-                "duration": 500
+                "duration": 300
             }
         },
         "$__mpe_code": {
             "position": {
                 "x": 527,
                 "y": 108
+            }
+        },
+        "on_error": [
+            "close_button"
+        ]
+    },
+    "$__mpe_external_close_button_collect_gold": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1046,
+                "y": 224
             }
         }
     }

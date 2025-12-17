@@ -8,7 +8,7 @@
     "description": "《村长征战团》小助手，解放双手，轻松游戏！",
     "contact": "kpAjun@outlook.com",
     "license": "AGPL-3.0",
-    "welcome": "首次使用！欢迎使用 MAA!",
+    "welcome": "欢迎使用MaaVC！",
     // 填写项目地址和版本号可实现自动更新功能
     "github": "https://github.com/kpAjun/MaaVillageConquest",
     "version": "1.0.0-alpha-1",
@@ -22,7 +22,7 @@
             "type": "Win32",
             "win32": {
                 "class_regex": ".*",
-                "window_regex": "村长",
+                "window_regex": "4399游戏大厅",
                 "screencap": "FramePool", // 截图方式
                 "mouse": "Seize", // 鼠标控制方式
                 "keyboard": "Seize" // 键盘控制方式

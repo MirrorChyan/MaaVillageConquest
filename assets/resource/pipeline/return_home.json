@@ -1,0 +1,74 @@
+{
+    "$__mpe_config_return_home": {
+        "$__mpe_code": {
+            "prefix": "",
+            "savedViewport": {
+                "x": -947.0378582261633,
+                "y": -57.65849846054107,
+                "zoom": 1.2430877108415177
+            },
+            "filename": "return_home",
+            "version": "v0.11.1"
+        }
+    },
+    "close_button": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "close_button.png"
+                ],
+                "green_mask": true,
+                "roi": [
+                    757,
+                    148,
+                    417,
+                    202
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 500
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 957,
+                "y": 235
+            }
+        },
+        "on_error": [
+            "exit_map"
+        ]
+    },
+    "exit_map": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "回城"
+                ],
+                "roi": [
+                    998,
+                    591,
+                    84,
+                    107
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1317,
+                "y": 261
+            }
+        }
+    }
+}
