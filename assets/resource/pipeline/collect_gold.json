@@ -1,0 +1,41 @@
+{
+    "$__mpe_config_collect_gold": {
+        "$__mpe_code": {
+            "prefix": "",
+            "savedViewport": {
+                "x": -471.1666259765625,
+                "y": -71.41665649414062,
+                "zoom": 1.5
+            },
+            "filename": "collect_gold",
+            "version": "v0.11.1"
+        }
+    },
+    "collect_gold": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "template": [
+                    "collect_gold.png"
+                ],
+                "roi": [
+                    259,
+                    122,
+                    918,
+                    580
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 527,
+                "y": 108
+            }
+        }
+    }
+}
