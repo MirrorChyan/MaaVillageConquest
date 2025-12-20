@@ -3,8 +3,8 @@
         "$__mpe_code": {
             "prefix": "",
             "savedViewport": {
-                "x": -357.6904235220295,
-                "y": -561.1101932485099,
+                "x": -492.228522093847,
+                "y": -514.1545665230483,
                 "zoom": 1.1908568493649683
             },
             "filename": "return_utils",
@@ -16,14 +16,18 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "close_button.png"
+                    "close_button.png",
+                    "close_button_covered.png"
                 ],
                 "green_mask": true,
                 "roi": [
-                    757,
-                    148,
-                    417,
-                    202
+                    758,
+                    133,
+                    339,
+                    246
+                ],
+                "threshold": [
+                    0.55
                 ]
             }
         },
@@ -33,10 +37,11 @@
                 "duration": 500
             }
         },
+        "post_delay": 400,
         "$__mpe_code": {
             "position": {
                 "x": 702,
-                "y": 396
+                "y": 361
             }
         }
     },
@@ -61,10 +66,11 @@
                 "duration": 300
             }
         },
+        "post_delay": 400,
         "$__mpe_code": {
             "position": {
-                "x": 704,
-                "y": 650
+                "x": 700,
+                "y": 698
             }
         }
     }
