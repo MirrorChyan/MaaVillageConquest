@@ -1,0 +1,345 @@
+{
+    "$__mpe_config_daily_rewards": {
+        "$__mpe_code": {
+            "prefix": "",
+            "savedViewport": {
+                "x": -2696.92472064339,
+                "y": -25.65562741192798,
+                "zoom": 1
+            },
+            "filename": "daily_rewards",
+            "version": "v0.11.4"
+        }
+    },
+    "collect_gold_click": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "collect_gold.png"
+                ],
+                "roi": [
+                    259,
+                    122,
+                    918,
+                    580
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300
+            }
+        },
+        "post_delay": 10000,
+        "$__mpe_code": {
+            "position": {
+                "x": 642,
+                "y": 141
+            }
+        },
+        "next": [
+            "sign_in_reward_start"
+        ]
+    },
+    "collect_gold_start": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Starting": "正在收集村庄金币"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 202,
+                "y": 314
+            }
+        },
+        "next": [
+            "collect_gold_click",
+            {
+                "name": "close_button",
+                "jump_back": true
+            },
+            {
+                "name": "exit_map",
+                "jump_back": true
+            }
+        ]
+    },
+    "$__mpe_external_close_button_daily_rewards": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3206,
+                "y": 432
+            }
+        }
+    },
+    "$__mpe_external_exit_map_daily_rewards": {
+        "$__mpe_code": {
+            "position": {
+                "x": 3206,
+                "y": 493
+            }
+        }
+    },
+    "sign_in_reward_start": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": {
+            "Node.Recognition.Starting": "正在收集签到奖励"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 981,
+                "y": 292
+            }
+        },
+        "next": [
+            "sign_in_reward_open",
+            {
+                "name": "close_button",
+                "jump_back": true
+            },
+            {
+                "name": "exit_map",
+                "jump_back": true
+            }
+        ]
+    },
+    "sign_in_reward_open": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    424,
+                    152,
+                    568,
+                    196
+                ],
+                "template": [
+                    "sign_in_rewards.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300
+            }
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 1299,
+                "y": 178
+            }
+        },
+        "next": [
+            "sign_in_reward_collect"
+        ]
+    },
+    "sign_in_reward_collect": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "sign_in_reward_collect"
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300
+            }
+        },
+        "post_delay": 400,
+        "$__mpe_code": {
+            "position": {
+                "x": 1631,
+                "y": 274
+            }
+        },
+        "next": [
+            "raffle_start"
+        ]
+    },
+    "raffle_start": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": {
+            "Node.Recognition.Starting": "正在收集摇号奖励"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1944,
+                "y": 335
+            }
+        },
+        "next": [
+            "raffle_open",
+            {
+                "name": "close_button",
+                "jump_back": true
+            },
+            {
+                "name": "exit_map",
+                "jump_back": true
+            }
+        ]
+    },
+    "raffle_open": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    424,
+                    152,
+                    568,
+                    196
+                ],
+                "template": [
+                    "raffle_start.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300
+            }
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 2239,
+                "y": 150
+            }
+        },
+        "next": [
+            "use_free_raffle",
+            "monthly_sub_start"
+        ]
+    },
+    "use_free_raffle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "可使用"
+                ],
+                "roi": [
+                    742,
+                    272,
+                    41,
+                    24
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300,
+                "target": [
+                    637,
+                    516,
+                    3,
+                    3
+                ]
+            }
+        },
+        "post_delay": 400,
+        "$__mpe_code": {
+            "position": {
+                "x": 2592,
+                "y": 147
+            }
+        },
+        "next": [
+            "monthly_sub_start"
+        ]
+    },
+    "monthly_sub_start": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": {
+            "Node.Recognition.Starting": "正在收集月卡奖励"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 2921,
+                "y": 278
+            }
+        },
+        "next": [
+            "monthly_sub_open",
+            {
+                "name": "close_button",
+                "jump_back": true
+            },
+            {
+                "name": "exit_map",
+                "jump_back": true
+            }
+        ]
+    },
+    "monthly_sub_open": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "monthly_sub.png"
+                ],
+                "roi": [
+                    454,
+                    158,
+                    534,
+                    176
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300
+            }
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 3203,
+                "y": 146
+            }
+        }
+    }
+}
