@@ -47,6 +47,10 @@
     },
     "task": [
         {
+            "name": "清理通知",
+            "entry": "open_msg_start"
+        },
+        {
             "name": "日常领取",
             "entry": "collect_gold_start"
         }

@@ -1,0 +1,110 @@
+{
+  "$__mpe_config_clear_msg": {
+    "$__mpe_code": {
+      "prefix": "",
+      "nodeOrderMap": {
+        "p_3": 0,
+        "p_4": 1,
+        "paste_6": 2
+      },
+      "nextOrderNumber": 3,
+      "savedViewport": {
+        "x": 728.4548185520101,
+        "y": 236.38424823246862,
+        "zoom": 0.8255901631491953
+      },
+      "filename": "clear_msg",
+      "version": "v0.11.4_beta_4"
+    }
+  },
+  "close_msg_popup": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "确定"
+        ],
+        "roi": [
+          488,
+          410,
+          312,
+          107
+        ]
+      }
+    },
+    "action": {
+      "type": "LongPress",
+      "param": {
+        "duration": 300
+      }
+    },
+    "timeout": 1000,
+    "$__mpe_code": {
+      "position": {
+        "x": 266,
+        "y": -59
+      }
+    }
+  },
+  "open_msg": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "msg.png"
+        ],
+        "roi": [
+          456,
+          484,
+          400,
+          64
+        ]
+      }
+    },
+    "action": {
+      "type": "LongPress",
+      "param": {
+        "duration": 300
+      }
+    },
+    "timeout": 1000,
+    "$__mpe_code": {
+      "position": {
+        "x": -71,
+        "y": -58
+      }
+    },
+    "next": [
+      {
+        "name": "close_msg_popup",
+        "jump_back": true
+      }
+    ]
+  },
+  "open_msg_start": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "$__mpe_code": {
+      "position": {
+        "x": -389,
+        "y": 20
+      }
+    },
+    "next": [
+      "open_msg"
+    ]
+  }
+}
