@@ -86,18 +86,13 @@ jobs:
           out-file-path: "deps"
           extract: true
 
-      - name: Remove built-in runtime in MFA
-        shell: bash
-        run: |
-          rm -rf MFA/runtimes
-
       - name: Download MFAAvalonia
         id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
           repository: SweetSmellFox/MFAAvalonia
-          fileName: "MFAAvalonia-*-${{ (matrix.os == 'win' && 'win') }}-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
-          latest: true
+          fileName: "MFAAvalonia-*-win-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}*"
+          tag: "v2.2.2"
           out-file-path: "MFA"
           extract: true
 
