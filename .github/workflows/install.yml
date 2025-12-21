@@ -119,7 +119,15 @@ jobs:
           if [ -d "MFA" ]; then
             echo "Copying MFA files to install directory..."
             mkdir -p install
-            rsync -av --ignore-existing MFA/ install/
+            shopt -s dotglob nullglob
+            for src in MFA/*; do
+              name=$(basename "$src")
+              if [ ! -e "install/$name" ]; then
+                cp -R -v "$src" install/
+              else
+                echo "Skipping existing: install/$name"
+              fi
+            done
           else
             echo "MFA directory not found, skipping copy."
           fi
