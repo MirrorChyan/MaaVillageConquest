@@ -111,11 +111,9 @@ jobs:
       - name: Install
         shell: bash
         run: |
-          cd tools/
           ./install/python/python.exe -m pip install -r ./requirements.txt
           PLATFORM_TAG="win-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}"
           ./install/python/python.exe ./tools/ci/install.py ${{ needs.meta.outputs.tag }} $PLATFORM_TAG
-          cd ..
 
           if [ -d "MFA" ]; then
             echo "Copying MFA files to install directory..."
