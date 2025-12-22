@@ -2,51 +2,13 @@
     "$__mpe_config_daily_rewards": {
         "$__mpe_code": {
             "prefix": "",
-            "nodeOrderMap": {
-                "4": 19,
-                "6": 21,
-                "9": 28,
-                "11": 30,
-                "12": 32,
-                "13": 33,
-                "14": 34,
-                "16": 38,
-                "17": 41,
-                "18": 42,
-                "20": 44,
-                "21": 45,
-                "24": 50,
-                "p_1": 0,
-                "p_2": 1,
-                "p_3": 2,
-                "p_4": 3,
-                "p_5": 4,
-                "p_6": 5,
-                "p_7": 6,
-                "p_8": 7,
-                "p_9": 8,
-                "p_10": 9,
-                "p_11": 10,
-                "p_12": 11,
-                "paste_1": 22,
-                "paste_2": 23,
-                "paste_3": 24,
-                "paste_5": 31,
-                "paste_7": 36,
-                "paste_8": 37,
-                "paste_9": 39,
-                "paste_10": 40,
-                "paste_11": 48,
-                "paste_12": 49
-            },
-            "nextOrderNumber": 51,
             "savedViewport": {
-                "x": -3190.5121982182754,
-                "y": 225.903194610642,
-                "zoom": 0.4022242321593873
+                "x": -9474.556895191305,
+                "y": 120.38710370085846,
+                "zoom": 0.9633099049851328
             },
             "filename": "daily_rewards",
-            "version": "v0.11.4_beta_4"
+            "version": "v0.12.0"
         }
     },
     "collect_gold_click": {
@@ -114,16 +76,16 @@
     "$__mpe_external_close_button_daily_rewards": {
         "$__mpe_code": {
             "position": {
-                "x": 5367,
-                "y": 675
+                "x": 6451,
+                "y": 539
             }
         }
     },
     "$__mpe_external_exit_map_daily_rewards": {
         "$__mpe_code": {
             "position": {
-                "x": 5368,
-                "y": 756
+                "x": 6446,
+                "y": 646
             }
         }
     },
@@ -408,8 +370,7 @@
         "next": [
             "collect_monthly_sub_reward",
             "collect_annual_sub_reward",
-            "seven_days_start",
-            "tower_start"
+            "seven_days_start"
         ]
     },
     "seven_days_start": {
@@ -439,7 +400,8 @@
             {
                 "name": "exit_map",
                 "jump_back": true
-            }
+            },
+            "tower_start"
         ]
     },
     "collect_monthly_sub_reward": {
@@ -647,10 +609,11 @@
                 "duration": 300
             }
         },
+        "post_delay": 1000,
         "$__mpe_code": {
             "position": {
                 "x": 5325,
-                "y": 182
+                "y": 161
             }
         },
         "next": [
@@ -697,8 +660,8 @@
     "$__mpe_external_close_msg_popup_daily_rewards": {
         "$__mpe_code": {
             "position": {
-                "x": 5927,
-                "y": 777
+                "x": 6442,
+                "y": 759
             }
         }
     },
@@ -1007,7 +970,15 @@
             }
         },
         "next": [
-            "mail_rewards_open"
+            "mail_rewards_open",
+            {
+                "name": "close_button",
+                "jump_back": true
+            },
+            {
+                "name": "exit_map",
+                "jump_back": true
+            }
         ]
     },
     "mail_rewards_open": {
@@ -1068,6 +1039,132 @@
             "position": {
                 "x": 9446,
                 "y": 119
+            }
+        },
+        "next": [
+            "vip_rewards_start"
+        ]
+    },
+    "vip_rewards_start": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "focus": {
+            "Node.Recognition.Starting": "正在收集VIP奖励"
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 9760,
+                "y": 124
+            }
+        },
+        "next": [
+            "vip_rewards_open",
+            {
+                "name": "close_button",
+                "jump_back": true
+            },
+            {
+                "name": "exit_map",
+                "jump_back": true
+            }
+        ]
+    },
+    "vip_rewards_open": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "vip_rewards.png"
+                ],
+                "roi": [
+                    434,
+                    158,
+                    568,
+                    173
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300
+            }
+        },
+        "post_delay": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 10117,
+                "y": 44
+            }
+        },
+        "next": [
+            "vip_rewards_menu"
+        ]
+    },
+    "vip_rewards_menu": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "礼包"
+                ],
+                "roi": [
+                    198,
+                    239,
+                    107,
+                    157
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300
+            }
+        },
+        "timeout": 1000,
+        "$__mpe_code": {
+            "position": {
+                "x": 10435,
+                "y": 75
+            }
+        },
+        "next": [
+            "vip_rewards_collect"
+        ]
+    },
+    "vip_rewards_collect": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "领取"
+                ],
+                "roi": [
+                    522,
+                    233,
+                    105,
+                    50
+                ]
+            }
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "duration": 300
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 10727,
+                "y": 102
             }
         }
     }
