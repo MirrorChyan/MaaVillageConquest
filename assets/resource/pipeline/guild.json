@@ -3,9 +3,9 @@
         "$__mpe_code": {
             "prefix": "",
             "savedViewport": {
-                "x": -3060.5535380223528,
-                "y": 162.65503993928485,
-                "zoom": 0.23817136987299367
+                "x": -11071.203292604767,
+                "y": -98.22812523763287,
+                "zoom": 0.9633099049851328
             },
             "filename": "guild",
             "version": "v0.12.0"
@@ -598,7 +598,8 @@
             {
                 "name": "close_button",
                 "jump_back": true
-            }
+            },
+            "guild_enter"
         ]
     },
     "guild_hall_start": {
@@ -1310,10 +1311,7 @@
                 "x": 17649,
                 "y": 75
             }
-        },
-        "next": [
-            "welfare_hall_collect_gold"
-        ]
+        }
     },
     "welfare_hall_collect_gold": {
         "recognition": {
