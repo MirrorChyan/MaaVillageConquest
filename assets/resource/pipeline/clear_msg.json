@@ -1,25 +1,64 @@
 {
   "$__mpe_config_clear_msg": {
     "$__mpe_code": {
-      "prefix": "",
-      "nodeOrderMap": {
-        "p_3": 0,
-        "p_4": 1,
-        "paste_6": 2
-      },
-      "nextOrderNumber": 3,
-      "savedViewport": {
-        "x": 593.1038753125536,
-        "y": 344.7409307295755,
-        "zoom": 0.9831597005545609
-      },
+      "filePath": "D:\\MAAdev\\MaaVillageConquest\\assets\\resource\\pipeline\\clear_msg.json",
       "filename": "clear_msg",
-      "version": "v0.11.4_beta_4"
+      "lastSyncTime": 1766460410241,
+      "prefix": "",
+      "savedViewport": {
+        "x": 1050.2951188969769,
+        "y": 244.21929736015963,
+        "zoom": 0.9633099049851328
+      },
+      "version": "v0.12.0"
+    }
+  },
+  "close_app_popup": {
+    "$__mpe_code": {
+      "position": {
+        "x": -734,
+        "y": 36
+      }
+    },
+    "action": {
+      "param": {},
+      "type": "Click"
+    },
+    "next": [
+      "open_msg_start"
+    ],
+    "recognition": {
+      "param": {
+        "roi": [
+          1099,
+          91,
+          169,
+          627
+        ],
+        "template": [
+          "app_popup.png"
+        ]
+      },
+      "type": "TemplateMatch"
     }
   },
   "close_msg_popup": {
+    "$__mpe_code": {
+      "position": {
+        "x": 266,
+        "y": -59
+      }
+    },
+    "action": {
+      "param": {
+        "duration": 300
+      },
+      "type": "LongPress"
+    },
+    "next": [
+      "open_msg"
+    ],
     "recognition": {
-      "type": "OCR",
       "param": {
         "expected": [
           "确定"
@@ -30,64 +69,51 @@
           312,
           107
         ]
-      }
+      },
+      "type": "OCR"
     },
-    "action": {
-      "type": "LongPress",
-      "param": {
-        "duration": 300
-      }
-    },
-    "timeout": 1000,
-    "$__mpe_code": {
-      "position": {
-        "x": 266,
-        "y": -59
-      }
-    },
-    "next": [
-      "open_msg"
-    ]
+    "timeout": 1000
   },
   "open_msg": {
-    "recognition": {
-      "type": "TemplateMatch",
-      "param": {
-        "template": [
-          "msg.png"
-        ],
-        "roi": [
-          456,
-          484,
-          400,
-          64
-        ]
-      }
-    },
-    "action": {
-      "type": "LongPress",
-      "param": {
-        "duration": 300
-      }
-    },
-    "timeout": 1000,
     "$__mpe_code": {
       "position": {
         "x": -65,
         "y": -62
       }
     },
+    "action": {
+      "param": {
+        "duration": 300
+      },
+      "type": "LongPress"
+    },
     "next": [
       "close_msg_popup"
-    ]
+    ],
+    "recognition": {
+      "param": {
+        "roi": [
+          456,
+          484,
+          400,
+          64
+        ],
+        "template": [
+          "msg.png"
+        ]
+      },
+      "type": "TemplateMatch"
+    },
+    "timeout": 1000
   },
   "open_msg_start": {
-    "recognition": {
-      "type": "DirectHit",
-      "param": {}
+    "$__mpe_code": {
+      "position": {
+        "x": -389,
+        "y": 20
+      }
     },
     "action": {
-      "type": "Click",
       "param": {
         "target": [
           0,
@@ -95,17 +121,16 @@
           0,
           0
         ]
-      }
-    },
-    "timeout": 1000,
-    "$__mpe_code": {
-      "position": {
-        "x": -389,
-        "y": 20
-      }
+      },
+      "type": "Click"
     },
     "next": [
       "open_msg"
-    ]
+    ],
+    "recognition": {
+      "param": {},
+      "type": "DirectHit"
+    },
+    "timeout": 1000
   }
 }

@@ -47,7 +47,7 @@
     },
     "task": [
         {
-            "name": "清理通知",
+            "name": "前期准备",
             "entry": "open_msg_start"
         },
         {
